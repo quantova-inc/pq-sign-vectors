@@ -1,0 +1,2 @@
+# throwaway keys that produced the vectors, regenerate with generate.sh
+vectors/*.priv.pem

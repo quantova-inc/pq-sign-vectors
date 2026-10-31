@@ -1,0 +1,10 @@
+set	artifact	signed_input	algorithm_oid	sig_bytes
+44	cbom	cbom.canonical.json	2.16.840.1.101.3.4.3.17	2420
+44	intoto	intoto.pae.bin	2.16.840.1.101.3.4.3.17	2420
+44	model	model.canonical.json	2.16.840.1.101.3.4.3.17	2420
+65	cbom	cbom.canonical.json	2.16.840.1.101.3.4.3.18	3309
+65	intoto	intoto.pae.bin	2.16.840.1.101.3.4.3.18	3309
+65	model	model.canonical.json	2.16.840.1.101.3.4.3.18	3309
+87	cbom	cbom.canonical.json	2.16.840.1.101.3.4.3.19	4627
+87	intoto	intoto.pae.bin	2.16.840.1.101.3.4.3.19	4627
+87	model	model.canonical.json	2.16.840.1.101.3.4.3.19	4627
