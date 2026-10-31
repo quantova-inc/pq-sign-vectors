@@ -35,3 +35,7 @@ A clean run reports twenty one checks passed and zero failed.
 ## License
 
 Apache-2.0 OR MIT.
+
+## Reject vectors
+
+The `reject-vectors` directory carries a companion corpus for the other half of interop, the signatures a verifier must refuse, aimed at the hint and length and bounds checks rather than the arithmetic.
