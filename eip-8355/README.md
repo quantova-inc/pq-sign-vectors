@@ -28,7 +28,7 @@ Each precompile takes `pubkey ++ signature ++ message` with no length fields. Th
 
 ## How these were produced
 
-Every signature is produced and checked with a stock OpenSSL 4.1.0 that offers native ML-DSA, using the empty context and the pure mode that EIP-8355 specifies. The corpus shares no code with any Ethereum client, so a client that agrees with it agrees across two independent implementations. The generator confirms at build time that each valid case verifies and each reject case fails before it writes the file.
+Every signature is produced and checked with a stock OpenSSL 4.1.0 that offers native ML-DSA, using the empty context and the pure mode that EIP-8355 specifies. The corpus shares no code with any Ethereum client, so a client that agrees with it agrees across two independent implementations. One of the ML-DSA-65 accept cases is taken directly from the NIST ACVP FIPS 204 verify set and reproduces the expected accept under OpenSSL, so the set is tied to the public conformance vectors as well as to an independent verifier. The generator confirms at build time that each valid case verifies and each reject case fails before it writes the file.
 
 ## Run it
 
