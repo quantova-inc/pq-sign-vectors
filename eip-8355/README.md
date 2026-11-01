@@ -1,8 +1,8 @@
 # ML-DSA verification vectors for EIP-8355
 
-A reproducible accept and reject corpus for the three ML-DSA verification precompiles in EIP-8355, aimed at the coverage the merged fixture does not reach. The checked in `assets/eip-8355/test-vectors.json` carries three cases for ML-DSA-44 only, one valid, one bit flip in c tilde, and one short input. This set adds ML-DSA-65 and ML-DSA-87, and it exercises the malformed encodings that the EIP requires a verifier to refuse.
+A reproducible accept and reject corpus for the three ML-DSA verification precompiles in EIP-8355, aimed at the coverage the merged fixture does not reach. The checked in `assets/eip-8355/test-vectors.json` carries three cases for ML-DSA-44 only, one valid, one bit flip in c tilde and one short input. This set adds ML-DSA-65 and ML-DSA-87. It exercises the malformed encodings that the EIP requires a verifier to refuse.
 
-Section "Verification" of the EIP states that on a malformed encoding, including out of range coefficients, a non canonical hint h, and a norm bound failure on z, the precompile must return failure rather than accept. None of those cases has a vector today. Each one is covered here for both of the higher parameter sets.
+Section "Verification" of the EIP states that on a malformed encoding, including out of range coefficients, a non canonical hint h and a norm bound failure on z, the precompile must return failure rather than accept. None of those cases has a vector today. Each one is covered here for both of the higher parameter sets.
 
 ## Input and output
 
@@ -36,8 +36,8 @@ Every signature is produced and checked with a stock OpenSSL 4.1.0 that offers n
 python3 verify.py
 ```
 
-`verify.py` reads `test-vectors.json`, splits each input by the parameter set lengths, verifies it with OpenSSL, and checks the result against the expected word. It reports `passed 16 failed 0` and exits nonzero on any mismatch. `gen.py` rebuilds the corpus from fresh keys.
+`verify.py` reads `test-vectors.json`, splits each input by the parameter set lengths, verifies it with OpenSSL and checks the result against the expected word. It reports `passed 17 failed 0` and exits nonzero on any mismatch. `gen.py` rebuilds the sixteen OpenSSL produced cases from fresh keys into `test-vectors.generated.json` while the single NIST ACVP case stays fixed in `test-vectors.json` with its source named.
 
 ## Measured verification cost
 
-On OpenSSL 4.1.0 a single verification is about 40 microseconds for ML-DSA-44, about 63 for ML-DSA-65, and about 101 for ML-DSA-87. The work ladder across the three sets is steeper than the base gas ladder, so the ML-DSA-87 base looks low relative to ML-DSA-44 if gas is meant to track verification time, which is worth checking against a client side benchmark before the numbers are fixed.
+On OpenSSL 4.1.0 a single verification is about 40 microseconds for ML-DSA-44, about 63 for ML-DSA-65 and about 101 for ML-DSA-87. The work ladder across the three sets is steeper than the base gas ladder, so the ML-DSA-87 base looks low relative to ML-DSA-44 if gas is meant to track verification time, which is worth checking against a client side benchmark before the numbers are fixed.

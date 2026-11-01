@@ -141,7 +141,7 @@ def build():
 
 def main():
     out = build()
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "test-vectors.json")
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "test-vectors.generated.json")
     json.dump(out, open(path, "w"), indent=2)
     print("wrote", path, "cases", len(out))
 
