@@ -2,7 +2,7 @@
 
 A reject and boundary corpus for SLH-DSA from FIPS 205, covering all twelve parameter sets across the SHA2 and SHAKE families at the 128, 192 and 256 levels in both the small and fast variants. It fills the half of interop that the positive known answer tests do not reach, the signatures a verifier is required to refuse. Across the signature libraries that now ship SLH-DSA the positive and known answer coverage is strong while a curated reject corpus is usually missing, so this set targets that gap.
 
-Every signature is produced and checked with a stock OpenSSL 4.1.0 that offers native SLH-DSA, using the empty context and the pure mode from FIPS 205. The corpus shares no code with any other implementation, so a verifier that agrees with it has agreed across two independent implementations, and the reject cases are the ones that catch decode, length and routing mistakes.
+Every signature is produced and checked with a stock OpenSSL 4.1.0 that offers native SLH-DSA, using the empty context and the pure mode from FIPS 205. The corpus shares no code with any other implementation, so a verifier that agrees with it has agreed across two independent implementations. The reject cases are the ones that catch decode, length and routing mistakes.
 
 ## Parameter sets
 
