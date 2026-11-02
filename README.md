@@ -39,3 +39,11 @@ Apache-2.0 OR MIT.
 ## Reject vectors
 
 The `reject-vectors` directory carries a companion corpus for the other half of interop, the signatures a verifier must refuse, aimed at the hint and length and bounds checks rather than the arithmetic.
+
+## COSE vectors
+
+The `cose-mldsa` directory carries a COSE_Sign1 interop corpus for ML-DSA at the COSE algorithm identifiers minus 48, minus 49 and minus 50, the same profile C2PA 2.5 adopts and a WebAuthn relying party would verify.
+
+## Context vectors
+
+The `ml-dsa-context` directory carries an ML-DSA interop corpus signed with an explicit context string, matching a ledger that signs with a context such as the soranet_pq crate in Hyperledger Iroha, with a context binding reject case.
